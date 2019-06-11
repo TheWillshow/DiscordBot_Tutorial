@@ -1,6 +1,7 @@
+require("dotenv").config();
 const Commando = require("discord.js-commando");
 const bot = new Commando.Client();
-const TOKEN = "NTg0MTI1MzEwMTUzNTIzMjE4.XPGYvg.J4qmUI62YpVvLvkoktrDobv1zVg";
+const bot_token = process.env.BOT_TOKEN;
 
 bot.registry.registerGroup("simple", "Simple");
 bot.registry.registerGroup("music", "Music");
@@ -17,4 +18,4 @@ bot.on("ready", function() {
   console.log("Ready");
 });
 
-bot.login(TOKEN);
+bot.login(bot_token);
